@@ -1,0 +1,4 @@
+.venv/
+test_folder/
+test.ipynb
+__pycache__/
