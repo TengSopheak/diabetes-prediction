@@ -94,9 +94,10 @@ def run_full_pipeline(
         )
 
         if save_artifacts:
-            save_split_data(X_train, y_train, "train")
-            save_split_data(X_val, y_val, "val")
-            save_split_data(X_test, y_test, "test")
+            save_split_data(
+                X_train, X_val, X_test,
+                y_train, y_val, y_test
+            )
             
     else:
         logger.info("Skipping preprocessing, loading processed data")
