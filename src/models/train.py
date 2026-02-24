@@ -210,7 +210,7 @@ class ModelSelector:
             
         # Sort by primary metric (descending)
         sorted_results = results_df.sort_values(
-            by=f"val_{self.primary_metric}", 
+            by=f"val_{self.primary_metric}",
             ascending=False
         )
         
@@ -271,7 +271,7 @@ def train_and_select_best_model(
         results = []
         
         for name, model in trained_models.items():
-            metrics = evaluator.evaluate_model(model, X_val, y_val, dataset_name="validation")
+            metrics = evaluator.evaluate_model(model, X_val, y_val, dataset_name="val")
             metrics["model_name"] = name
             results.append(metrics)
             
